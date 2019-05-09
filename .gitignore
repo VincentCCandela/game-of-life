@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+
+# Files in the .vscode foler
+
+game_of_life.ipch
+mmap_address.bin

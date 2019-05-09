@@ -3,8 +3,9 @@
 
 using namespace std;
 
-int main(){
-    int row = 20, column = 20,grid[row][column];
+int main()
+{
+    int row = 20, col = 20, grid[row][col];
 
 
     return 0;

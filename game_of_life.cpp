@@ -3,7 +3,7 @@
 
 using namespace std;
 
-bool checker(int r, int c, int orginial[r][c], int temp[r][c], int cl); //creates function to check cell is if alive or dead (true or false)
+bool checker(int r, int c, int orginial[r][c]); //creates function to check cell is if alive or dead (true or false)
 
 int main()
 {
@@ -54,11 +54,92 @@ int main()
         cin >> response;
     }
 
+    
+
     return 0;
 }
 
-bool checker(int r, int c, int orginial[r][c], int temp[r][c], int cl)
+bool checker(int r, int c, int orginial[r][c])
 {
+    int temp[r][c], counter;
+    
+    if(r == 0 && c == 0=){
+        if(original[r][c + 1] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c + 1] == 'X'){
+            ++counter;
+        }
+    }
+    else if(r == 19 && c == 0){
+        if(original[r - 1][c] == 'X'){
+            ++counter;
+        }
+        if(original[r - 1][c + 1] == 'X'){
+            ++counter;
+        }
+        if(original[r][c + 1] == 'X'){
+            ++counter;
+        }
+    }
+    else if(r == 19 && c == 19){
+        if(original[r][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r - 1][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r - 1][c] == 'X'){
+            ++counter;
+        }
+    }
+    else if(r == 0 && c == 19){
+        if(original[r][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c] == 'X'){
+            ++counter;
+        }
+    }
+
+    else{    
+        if(original[r - 1][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r - 1][c] == 'X'){
+            ++counter;
+        }
+        if(original[r - 1][c + 1] == 'X'){
+            ++counter;
+        }
+        if(original[r][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r][c + 1] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c + 1] == 'X'){
+            ++counter;
+        }
+    }
+
+    if(counter)
+    
+    
+    
+    /*
     if(cl == true)
     {
         if(number of neighbors is 2 or 3)
@@ -82,7 +163,8 @@ bool checker(int r, int c, int orginial[r][c], int temp[r][c], int cl)
             return false;
         }
     }
+    */
 }
 
 
-original[i][j-1] , original[i][j+1], original[i-1][j-1], original[i-1][j], original[i-1][j+1], original[i+1][j-1], original[i+1][j], original[i+1][j+1]
+//original[i][j-1] , original[i][j+1], original[i-1][j-1], original[i-1][j], original[i-1][j+1], original[i+1][j-1], original[i+1][j], original[i+1][j+1]

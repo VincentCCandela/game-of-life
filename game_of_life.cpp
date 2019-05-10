@@ -5,10 +5,11 @@ using namespace std;
 
 bool checker(int r, int c, int orginial[r][c]); //creates function to check cell is if alive or dead (true or false)
 void changer(int r, int c, int original[r][c]); //creates function to change grid values
+const int row = 20, column = 20; //size of grid
+
 
 int main()
 {
-    const int row = 20, column = 20; //size of grid
     int x_coordinate, y_coordinate; //input for desired coordinates of cells
     char response, grid[row][column], temp_grid[row][column]; //creates grid and the backup grid
 
@@ -136,8 +137,13 @@ bool checker(int r, int c, int orginial[r][c])
         }
     }
 
-    if(counter)
-
+    if(counter > 3 || counter < 2){
+        return false;
+    }
+    else{
+        return true;
+    }    
+}
     void changer(int r, int c, int original[r][c])
     {
 

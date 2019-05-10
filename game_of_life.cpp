@@ -32,7 +32,7 @@ int main()
     cout << "Do you want to enter a live cell into the grid? (y/n) ";
     cin >> response;
 
-    while (toupper(response) == 'Y')
+    while (toupper(response) == 'Y') //when response is yes, will let you selct where you want new cell
     {
         cout << "Enter the x coordinate of the cell: ";
         cin >> x_coordinate;
@@ -40,13 +40,13 @@ int main()
         cout << "Enter the y coordinate of the cell: ";
         cin >> y_coordinate;
 
-        grid[x_coordinate][y_coordinate] = 'X';
+        grid[x_coordinate][y_coordinate] = 'X'; //marks where new cell is
 
         for(int i = 0; i < row; ++i)
         {
             for(int j = 0; j < column; ++j)
             {
-                cout << setw(4) << grid[i][j];
+                cout << setw(4) << grid[i][j]; //outputs updated grid
             }
         }
 

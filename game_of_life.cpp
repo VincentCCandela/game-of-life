@@ -7,7 +7,6 @@ bool checker(int r, int c, int orginial[r][c]); //creates function to check cell
 void changer(int r, int c, int original[r][c]); //creates function to change grid values
 const int row = 20, column = 20; //size of grid
 
-
 int main()
 {
     int x_coordinate, y_coordinate; //input for desired coordinates of cells

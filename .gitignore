@@ -35,3 +35,4 @@
 
 game_of_life.ipch
 mmap_address.bin
+.vscode/*

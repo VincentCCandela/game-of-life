@@ -3,21 +3,20 @@
 
 using namespace std;
 
-bool checker(int r, int c, int orginial[r][c], int temp[r][c], int cl);
+bool checker(int r, int c, int orginial[r][c], int temp[r][c], int cl); //creates function to check cell is if alive or dead (true or false)
 
 int main()
 {
-    const int row = 20, column = 20;
-    int x_coordinate, y_coordinate;
-    int cell;
-    char response, grid[row][column], temp_grid[row][column];
+    const int row = 20, column = 20; //size of grid
+    int x_coordinate, y_coordinate; //input for desired coordinates of cells
+    char response, grid[row][column], temp_grid[row][column]; //creates grid and the backup grid
 
     for(int i = 0; i < row; ++i)
     {
         for(int j = 0; j < column; ++j)
         {
-            grid[i][j] = 'O';
-            temp_grid[i][j] = grid[i][j];
+            grid[i][j] = 'O'; //fills grid with '0's
+            temp_grid[i][j] = grid[i][j]; //sets value of temporary grid to original grid
         }
     }
 
@@ -25,7 +24,7 @@ int main()
     {
         for(int j = 0; j < column; ++j)
         {
-            cout << setw(4) << grid[i][j];
+            cout << setw(4) << grid[i][j]; //outputs grid
         }
     }
 

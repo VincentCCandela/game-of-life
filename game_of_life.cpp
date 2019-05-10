@@ -3,27 +3,36 @@
 
 using namespace std;
 
-bool checker(int r, int c, int orginial[r][c], int orginial[r][c], int cl);
-
 int main()
 {
-    int row = 20, column = 20, grid[row][column], temp_grid[row][column];
-    bool cell;
-    
-    for(int i = 0; i < row; i++)
+    const int row = 20, column = 20
+    int x_coordinate, y_coordinate;
+    char response, grid[row][column], temp_grid[row][column];
+
+    for(int i = 0; i < row; ++i)
     {
-        for(int j = 0; j < column; j++)
+        for(int j = 0; j < col; ++j)
         {
-            checker(r,c,cl,orginial[r][c]),orginial[r][c]);
+            grid[i][j] = 'O';
+            temp_grid[i][j] = grid[i][j];
         }
     }
 
-    for(int i = 0; i < row; i++)
+    cout << "Do you want to enter a live cell into the grid? (y/n) ";
+    cin >> response;
+
+    while (toupper(response) == 'Y')
     {
-        for(int j = 0; j < column; j++)
-        {
-            cout << grid[i][j];
-        }
+        cout << "Enter the x coordinate of the cell: "
+        cin >> x_coordinate;
+
+        cout << "Enter the y coordinate of the cell: "
+        cin >> y_coordiante;
+
+        grid[x_coordinate][  20 - y_coordinate ] = 'X'
+
+        cout << "Do you want to enter another live cell into the grid? (y/n) ";
+        cin >> response;
     }
 
     return 0;

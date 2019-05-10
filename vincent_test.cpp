@@ -3,13 +3,10 @@
 
 using namespace std;
 
-bool checker(int r, int c, int orginial[r][c], int temp[r][c], int cl);
-
 int main()
 {
     const int row = 20, column = 20;
     int x_coordinate, y_coordinate;
-    int cell;
     char response, grid[row][column], temp_grid[row][column];
 
     for(int i = 0; i < row; ++i)
@@ -57,33 +54,3 @@ int main()
 
     return 0;
 }
-
-bool checker(int r, int c, int orginial[r][c], int temp[r][c], int cl)
-{
-    if(cl == true)
-    {
-        if(number of neighbors is 2 or 3)
-        {
-             return true;
-        }
-        else
-        {
-             return false;
-        }
-                
-        }
-    else
-    {
-        if(number of neighbors is exactly 3)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-}
-
-
-original[i][j-1] , original[i][j+1], original[i-1][j-1], original[i-1][j], original[i-1][j+1], original[i+1][j-1], original[i+1][j], original[i+1][j+1]

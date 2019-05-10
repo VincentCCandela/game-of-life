@@ -3,7 +3,7 @@
 
 using namespace std;
 
-bool checker(int r, int c, int orginial[r][c]); //creates function to check cell is if alive or dead (true or false)
+bool full_checker(int r, int c, int orginial[r][c]); //creates function to check cell is if alive or dead (true or false)
 void changer(int r, int c, int original[r][c]); //creates function to change grid values
 const int row = 20, column = 20; //size of grid
 
@@ -60,7 +60,7 @@ int main()
     return 0;
 }
 
-bool checker(int r, int c, int orginial[r][c])
+bool full_checker(int r, int c, int orginial[r][c])
 {
     int temp[r][c], counter;
     

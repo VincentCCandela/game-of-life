@@ -54,32 +54,3 @@ int main()
 
     return 0;
 }
-
-bool checker(int r, int c, int orginial[r][c], int temp[r][c], int cl)
-{
-    original[i][j]
-
-    if(cl == true)
-    {
-        if(number of neighbors is 2 or 3)
-        {
-             return true;
-        }
-        else
-        {
-             return false;
-        }
-                
-        }
-    else
-    {
-        if(number of neighbors is exactly 3)
-        {
-            return true;
-        }
-        else
-        {
-                    return false;
-        }
-    }
-}

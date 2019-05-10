@@ -3,7 +3,7 @@
 
 using namespace std;
 
-bool checker(int r, int c, int orginial[r][c], int temp[r][c], int cl);
+bool checker(int r, int c, int orginial[r][c]);
 
 int main()
 {
@@ -55,11 +55,36 @@ int main()
         cin >> response;
     }
 
+    
+
     return 0;
 }
 
-bool checker(int r, int c, int orginial[r][c], int temp[r][c], int cl)
+bool checker(int r, int c, int orginial[r][c])
 {
+    int temp[r][c], counter;
+    
+    if(){
+        if(original[r][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r][c + 1] == 'X'){
+            ++counter;
+        }
+        if(original[r][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r][c - 1] == 'X'){
+            ++counter;
+        }
+    }
+    
+    
+    
+    
     if(cl == true)
     {
         if(number of neighbors is 2 or 3)

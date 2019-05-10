@@ -3,11 +3,11 @@
 
 using namespace std;
 
-bool checker(int r, int c, int orginial[r][c]); //creates function to check cell is if alive or dead (true or false)
+bool full_checker(int r, int c, int orginial[r][c]); //creates function to check cell is if alive or dead (true or false)
+const int row = 20, column = 20; //size of grid
 
 int main()
 {
-    const int row = 20, column = 20; //size of grid
     int x_coordinate, y_coordinate; //input for desired coordinates of cells
     char response, grid[row][column], temp_grid[row][column]; //creates grid and the backup grid
 
@@ -59,9 +59,9 @@ int main()
     return 0;
 }
 
-bool checker(int r, int c, int orginial[r][c])
+bool full_checker(int r, int c, int orginial[r][c])
 {
-    int temp[r][c], counter;
+    int temp[r][c], counter = 0;
     
     if(r == 0 && c == 0=){
         if(original[r][c + 1] == 'X'){
@@ -135,36 +135,10 @@ bool checker(int r, int c, int orginial[r][c])
         }
     }
 
-    if(counter)
-    
-    
-    
-    /*
-    if(cl == true)
-    {
-        if(number of neighbors is 2 or 3)
-        {
-             return true;
-        }
-        else
-        {
-             return false;
-        }
-                
-        }
-    else
-    {
-        if(number of neighbors is exactly 3)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+    if(counter > 3 || counter < 2){
+        return false;
     }
-    */
+    else{
+        return true;
+    }    
 }
-
-
-//original[i][j-1] , original[i][j+1], original[i-1][j-1], original[i-1][j], original[i-1][j+1], original[i+1][j-1], original[i+1][j], original[i+1][j+1]

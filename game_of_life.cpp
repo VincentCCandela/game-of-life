@@ -4,7 +4,7 @@
 using namespace std;
 
 bool checker(int r, int c, int orginial[r][c]); //creates function to check cell is if alive or dead (true or false)
-void changer(int r, int c, int original[r][c]); //creates function to change grid values
+void changer(int r, int c, int & original[r][c]); //creates function to change grid values
 
 int main()
 {
@@ -138,7 +138,14 @@ bool checker(int r, int c, int orginial[r][c])
 
     if(counter)
 
-    void changer(int r, int c, int original[r][c])
+    void changer(int r, int c, int & original[r][c])
     {
-
+        if(checker(r,c,original[r][c]) == true)
+        {
+            original[r][c] = 'X';
+        }
+        else if(checker(r,c,original[r][c]) == false)
+        {
+            original[r][c] = 'O';
+        }
     }

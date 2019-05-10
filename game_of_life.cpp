@@ -29,7 +29,7 @@ int main()
         cout << "Enter the y coordinate of the cell: "
         cin >> y_coordiante;
 
-        grid[x_coordinate][  20 - y_coordinate ] = 'X'
+        grid[x_coordinate][y_coordinate] = 'X'
 
         cout << "Do you want to enter another live cell into the grid? (y/n) ";
         cin >> response;

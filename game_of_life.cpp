@@ -10,7 +10,7 @@ const int row = 20, column = 20; //size of grid
 int main()
 {
     int x_coordinate, y_coordinate; //input for desired coordinates of cells
-    char response, grid[row][column]; //creates grid 
+    char response, reponse2, grid[row][column]; //creates grid, response1, and reponse2
 
     for(int i = 0; i < row; ++i)
     {
@@ -29,29 +29,48 @@ int main()
     }
 
     cout << "Do you want to enter a live cell into the grid? (y/n) ";
-    cin >> response;
+    cin >> response2;
 
-    while (toupper(response) == 'Y') //when response is yes, will let you selct where you want new cell
+    while(toupper(response2) == 'Y')
     {
-        cout << "Enter the x coordinate of the cell: ";
-        cin >> x_coordinate;
-
-        cout << "Enter the y coordinate of the cell: ";
-        cin >> y_coordinate;
-
-        grid[x_coordinate][y_coordinate] = 'X'; //marks where new cell is
-
         for(int i = 0; i < row; ++i)
         {
             for(int j = 0; j < column; ++j)
             {
-                cout << setw(4) << grid[i][j]; //outputs updated grid
+                changer(r,c,original[r][c]); //calls changer function for grid
             }
         }
 
-        cout << "Do you want to enter another live cell into the grid? (y/n) ";
-        cin >> response;
+        while (toupper(response) == 'Y') //when response is yes, will let you selct where you want new cell
+        {
+           cout << "Enter the x coordinate of the cell: ";
+            cin >> x_coordinate;
+
+            cout << "Enter the y coordinate of the cell: ";
+            cin >> y_coordinate;
+
+            grid[x_coordinate][y_coordinate] = 'X'; //marks where new cell is
+
+            for(int i = 0; i < row; ++i)
+            {
+                for(int j = 0; j < column; ++j)
+                {
+                    cout << setw(4) << grid[i][j]; //outputs updated grid
+                }
+            }
+
+            cout << "Do you want to enter another live cell into the grid? (y/n) ";
+            cin >> response;
+        }
+
+        cout << "Do you want to go to the next day?";
+        cin >> response2;
     }
+
+    cout << endl;
+
+    cout << "Thanks for playing!" << endl;
+
     return 0;
 }
 
@@ -208,13 +227,12 @@ bool full_checker(int r, int c, int original[][column]){
 
 void changer(int r, int c, int array[][column])
 {
-    if(checker(r,c,array) == true)
+    if(checker(r,c,array) == true) //sets all true values to showing a live cell
     {
         array[r][c] = 'X';
     }
-    else if(checker(r,c,array) == false)
+    else if(checker(r,c,array) == false) //sets all false values to showing no cell(dead)
     {
         array[r][c] = 'O';
     }
 }
-

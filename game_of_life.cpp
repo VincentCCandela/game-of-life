@@ -203,12 +203,24 @@ bool full_checker(int r, int c, int original[][column]){
         else{
             return true;
         }
+    }
+
+    else if(original[r][c] == 'O'){
+        char temp_array[row][column] = original;
+        temp_array[r][c] = 'X';
+
+        if(checker(r,c,temp_array) == true){
+            return true;
+        }
+        else{
+            return false;
+        }
     }    
 }
 
 void changer(int r, int c, int array[][column])
 {
-    if(checker(r,c,array) == true)
+    if( array[r][c] == 'X' && checker(r,c,array) == true)
     {
         array[r][c] = 'X';
     }

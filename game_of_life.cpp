@@ -3,14 +3,14 @@
 
 using namespace std;
 
-bool full_checker(int r, int c, int orginial[row][column]); //creates function to check cell is if alive or dead (true or false)
+int full_checker(int r, int c, int orginial[row][column]); //creates function to check cell is if alive or dead (true or false)
 void changer(int r, int c, int original[row][column]); //creates function to change grid values
 const int row = 20, column = 20; //size of grid
 
 int main()
 {
     int x_coordinate, y_coordinate; //input for desired coordinates of cells
-    char response, grid[row][column]; //creates grid 
+    char response, reponse2, grid[row][column]; //creates grid, response1, and reponse2
 
     for(int i = 0; i < row; ++i)
     {
@@ -29,33 +29,52 @@ int main()
     }
 
     cout << "Do you want to enter a live cell into the grid? (y/n) ";
-    cin >> response;
+    cin >> response2;
 
-    while (toupper(response) == 'Y') //when response is yes, will let you selct where you want new cell
+    while(toupper(response2) == 'Y')
     {
-        cout << "Enter the x coordinate of the cell: ";
-        cin >> x_coordinate;
-
-        cout << "Enter the y coordinate of the cell: ";
-        cin >> y_coordinate;
-
-        grid[x_coordinate][y_coordinate] = 'X'; //marks where new cell is
-
         for(int i = 0; i < row; ++i)
         {
             for(int j = 0; j < column; ++j)
             {
-                cout << setw(4) << grid[i][j]; //outputs updated grid
+                changer(r,c,original[r][c]); //calls changer function for grid
             }
         }
 
-        cout << "Do you want to enter another live cell into the grid? (y/n) ";
-        cin >> response;
+        while (toupper(response) == 'Y') //when response is yes, will let you selct where you want new cell
+        {
+           cout << "Enter the x coordinate of the cell: ";
+            cin >> x_coordinate;
+
+            cout << "Enter the y coordinate of the cell: ";
+            cin >> y_coordinate;
+
+            grid[x_coordinate][y_coordinate] = 'X'; //marks where new cell is
+
+            for(int i = 0; i < row; ++i)
+            {
+                for(int j = 0; j < column; ++j)
+                {
+                    cout << setw(4) << grid[i][j]; //outputs updated grid
+                }
+            }
+
+            cout << "Do you want to enter another live cell into the grid? (y/n) ";
+            cin >> response;
+        }
+
+        cout << "Do you want to go to the next day?";
+        cin >> response2;
     }
+
+    cout << endl;
+
+    cout << "Thanks for playing!" << endl;
+
     return 0;
 }
 
-bool full_checker(int r, int c, int original[][column]){
+int full_checker(int r, int c, int original[][column]){
     int counter;
     if(original[r][c] == 'X')
         if(r == 0 && c == 0){
@@ -197,11 +216,14 @@ bool full_checker(int r, int c, int original[][column]){
             }
         }
 
-        if(counter > 3 || counter < 2){
-            return false;
+        if(counter == 3 || counter == 2){
+            return 1;
+        }
+        else if(counter == 3){
+            return 2;
         }
         else{
-            return true;
+            return 0;
         }
     }
 
@@ -209,7 +231,7 @@ bool full_checker(int r, int c, int original[][column]){
         char temp_array[row][column] = original;
         temp_array[r][c] = 'X';
 
-        if(checker(r,c,temp_array) == true){
+        if(checker(r,c,temp_array) == 1){
             return true;
         }
         else{
@@ -220,13 +242,18 @@ bool full_checker(int r, int c, int original[][column]){
 
 void changer(int r, int c, int array[][column])
 {
-    if( array[r][c] == 'X' && checker(r,c,array) == true)
+    if(array[r][c] == 'X' && checker(r,c,array) == true)
     {
         array[r][c] = 'X';
     }
-    else if(checker(r,c,array) == false)
+    else if(array[r][c] == 'X' && checker(r,c,array) == false) //sets all false values to showing no cell(dead)
     {
         array[r][c] = 'O';
     }
+    else if(array[r][c] == 'O' && check(r,c,array) == true){
+        array[r][c] == 'X';
+    }
+    else if(array[r][c] == 'O' && check(r,c,array) == false){
+        array[r][c] == 'O';
+    }
 }
-

@@ -4,6 +4,7 @@
 using namespace std;
 
 int full_checker(int r, int c, int orginial[row][column]); //creates function to check cell is if alive or dead (true or false)
+bool full_checker(int r, int c, int orginial[row][column]); //creates function to check cell is if alive or dead (true or false)
 void changer(int r, int c, int original[row][column]); //creates function to change grid values
 const int row = 20, column = 20; //size of grid
 
@@ -76,168 +77,157 @@ int main()
 
 int full_checker(int r, int c, int original[][column]){
     int counter;
-    if(original[r][c] == 'X')
-        if(r == 0 && c == 0){
-            if(original[r][c + 1] == 'X'){
-                ++counter;
-            }
-            if(original[r + 1][c] == 'X'){
-                ++counter;
-            }
-            if(original[r + 1][c + 1] == 'X'){
-                ++counter;
-            }
+    if(r == 0 && c == 0){
+        if(original[r][c + 1] == 'X'){
+            ++counter;
         }
-        else if(r == 19 && c == 0){
-            if(original[r - 1][c] == 'X'){
-                ++counter;
-            }
-            if(original[r - 1][c + 1] == 'X'){
-                ++counter;
-            }
-            if(original[r][c + 1] == 'X'){
-                ++counter;
-            }
+        if(original[r + 1][c] == 'X'){
+            ++counter;
         }
-        else if(r == 19 && c == 19){
-            if(original[r][c - 1] == 'X'){
-                ++counter;
-            }
-            if(original[r - 1][c - 1] == 'X'){
-                ++counter;
-            }
-            if(original[r - 1][c] == 'X'){
-                ++counter;
-            }
-        }
-        else if(r == 0 && c == 19){
-            if(original[r][c - 1] == 'X'){
-                ++counter;
-            }
-            if(original[r + 1][c - 1] == 'X'){
-                ++counter;
-            }
-            if(original[r + 1][c] == 'X'){
-                ++counter;
-            }
-        }
-        else if(r == 0){
-            if(original[r + 1][c] == 'X'){
-                ++counter;
-            }
-            if(original[r + 1][c - 1] == 'X'){
-                ++counter;
-            }
-            if(original[r + 1][c + 1] == 'X'){
-                ++counter;
-            }
-            if(original[r][c + 1] == 'X'){
-                ++counter;
-            }
-            if(original[r][c - 1] == 'X'){
-                ++counter;
-            }
-        }
-        else if(r == 19){
-            if(original[r - 1][c] == 'X'){
-                ++counter;
-            }
-            if(original[r - 1][c + 1] == 'X'){
-                ++counter;
-            }
-            if(original[r - 1][c - 1] == 'X'){
-                ++counter;
-            }
-            if(original[r][c + 1] == 'X'){
-                ++counter;
-            }
-            if(original[r][c - 1] == 'X'){
-                ++counter;
-            }
-        }
-        else if(c == 0){
-            if(original[r][c + 1] == 'X'){
-                ++counter;
-            }
-            if(original[r - 1][c + 1] == 'X'){
-                ++counter;
-            }
-            if(original[r + 1][c + 1] == 'X'){
-                ++counter;
-            }
-            if(original[r - 1][c] == 'X'){
-                ++counter;
-            }
-            if(original[r + 1][c] == 'X'){
-                ++counter;
-            }
-        }
-        else if(c == 19){
-            if(original[r][c - 1] == 'X'){
-                ++counter;
-            }
-            if(original[r - 1][c - 1] == 'X'){
-                ++counter;
-            }
-            if(original[r + 1][c - 1] == 'X'){
-                ++counter;
-            }
-            if(original[r - 1][c] == 'X'){
-                ++counter;
-            }
-            if(original[r + 1][c] == 'X'){
-                ++counter;
-            }
-        }
-        else{    
-            if(original[r - 1][c - 1] == 'X'){
-                ++counter;
-            }
-            if(original[r - 1][c] == 'X'){
-                ++counter;
-            }
-            if(original[r - 1][c + 1] == 'X'){
-                ++counter;
-            }
-            if(original[r][c - 1] == 'X'){
-                ++counter;
-            }
-            if(original[r][c + 1] == 'X'){
-                ++counter;
-            }
-            if(original[r + 1][c - 1] == 'X'){
-                ++counter;
-            }
-            if(original[r + 1][c] == 'X'){
-                ++counter;
-            }
-            if(original[r + 1][c + 1] == 'X'){
-                ++counter;
-            }
-        }
-
-        if(counter == 3 || counter == 2){
-            return 1;
-        }
-        else if(counter == 3){
-            return 2;
-        }
-        else{
-            return 0;
+        if(original[r + 1][c + 1] == 'X'){
+            ++counter;
         }
     }
+    else if(r == 19 && c == 0){
+        if(original[r - 1][c] == 'X'){
+            ++counter;
+        }
+        if(original[r - 1][c + 1] == 'X'){
+            ++counter;
+        }
+        if(original[r][c + 1] == 'X'){
+            ++counter;
+        }
+    }
+    else if(r == 19 && c == 19){
+        if(original[r][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r - 1][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r - 1][c] == 'X'){
+            ++counter;
+        }
+    }
+    else if(r == 0 && c == 19){
+        if(original[r][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c] == 'X'){
+            ++counter;
+        }
+    }
+    else if(r == 0){
+        if(original[r + 1][c] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c + 1] == 'X'){
+            ++counter;
+        }
+        if(original[r][c + 1] == 'X'){
+            ++counter;
+        }
+        if(original[r][c - 1] == 'X'){
+            ++counter;
+        }
+    }
+    else if(r == 19){
+        if(original[r - 1][c] == 'X'){
+            ++counter;
+        }
+        if(original[r - 1][c + 1] == 'X'){
+            ++counter;
+        }
+        if(original[r - 1][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r][c + 1] == 'X'){
+            ++counter;
+        }
+        if(original[r][c - 1] == 'X'){
+            ++counter;
+        }
+    }
+    else if(c == 0){
+        if(original[r][c + 1] == 'X'){
+            ++counter;
+        }
+        if(original[r - 1][c + 1] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c + 1] == 'X'){
+            ++counter;
+        }
+        if(original[r - 1][c] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c] == 'X'){
+            ++counter;
+        }
+    }
+    else if(c == 19){
+        if(original[r][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r - 1][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r - 1][c] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c] == 'X'){
+            ++counter;
+        }
+    }
+    else{    
+        if(original[r - 1][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r - 1][c] == 'X'){
+            ++counter;
+        }
+        if(original[r - 1][c + 1] == 'X'){
+            ++counter;
+        }
+        if(original[r][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r][c + 1] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c - 1] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c] == 'X'){
+            ++counter;
+        }
+        if(original[r + 1][c + 1] == 'X'){
+            ++counter;
+        }
 
-    else if(original[r][c] == 'O'){
-        char temp_array[row][column] = original;
-        temp_array[r][c] = 'X';
-
-        if(checker(r,c,temp_array) == 1){
-            return true;
+        if(counter  == 3){
+            return 3;
+        }
+        else if(counter == 2) {
+            return 2;
+        }
+        else if (couter > 3){
+            return 4;
         }
         else{
-            return false;
+            return 1;
         }
-    }    
+    }
 }
 
 void changer(int r, int c, int array[][column])

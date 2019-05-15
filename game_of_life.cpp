@@ -32,7 +32,7 @@ int main()
     cout << "Do you want to play?";
     cin >> response2;
 
-    while(toupper(response2) == 'Y')
+    while(toupper(response2) == 'Y') //while answer is yes, program will coninue running(days)
     {
         for(int i = 0; i < row; ++i)
         {
@@ -42,15 +42,15 @@ int main()
             }
         }
 
-        cout << "Do you want to enter a live cell into the grid? (y/n) ";
+        cout << "Do you want to enter a live cell into the grid? (y/n) "; //asks if you want to add cell
         cin >> response;
 
         while (toupper(response) == 'Y') //when response is yes, will let you selct where you want new cell
         {
-           cout << "Enter the x coordinate of the cell: ";
+            cout << "Enter the x coordinate of the cell: "; //input for x coordinate
             cin >> x_coordinate;
 
-            cout << "Enter the y coordinate of the cell: ";
+            cout << "Enter the y coordinate of the cell: "; //input for y coordinate
             cin >> y_coordinate;
 
             grid[x_coordinate][y_coordinate] = 'X'; //marks where new cell is

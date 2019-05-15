@@ -230,20 +230,14 @@ int full_checker(int r, int c, int original[][column]){
     }
 }
 
-void changer(int r, int c, int array[][column])
+void changer(int r, int c, char array[][column], char temp_array[][column])
 {
-    if(array[r][c] == 'X' && checker(r,c,array) == true)
+    if(array[r][c] == 'O' && ( checker(r,c,array) == 3 || checker(r,c,array) == 2 )
     {
-        array[r][c] = 'X';
+        temp_array[r][c] = 'X';
     }
-    else if(array[r][c] == 'X' && checker(r,c,array) == false) //sets all false values to showing no cell(dead)
+    else if(array[r][c] == 'X' && (checker(r,c,array) == 4 || checker(r,c,array) == 1) ) //sets all false values to showing no cell(dead)
     {
-        array[r][c] = 'O';
-    }
-    else if(array[r][c] == 'O' && check(r,c,array) == true){
-        array[r][c] == 'X';
-    }
-    else if(array[r][c] == 'O' && check(r,c,array) == false){
-        array[r][c] == 'O';
+        temp_array[r][c] = 'O';
     }
 }

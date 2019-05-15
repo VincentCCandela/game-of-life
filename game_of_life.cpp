@@ -28,7 +28,7 @@ int main()
         }
     }
 
-    cout << "Do you want to enter a live cell into the grid? (y/n) ";
+    cout << "Do you want to play?";
     cin >> response2;
 
     while(toupper(response2) == 'Y')
@@ -40,6 +40,9 @@ int main()
                 changer(r,c,original[r][c]); //calls changer function for grid
             }
         }
+
+        cout << "Do you want to enter a live cell into the grid? (y/n) ";
+        cin >> response;
 
         while (toupper(response) == 'Y') //when response is yes, will let you selct where you want new cell
         {
@@ -242,7 +245,7 @@ int full_checker(int r, int c, int original[][column]){
 
 void changer(int r, int c, int array[][column])
 {
-    if(array[r][c] == 'X' && checker(r,c,array) == true)
+    if(array[r][c] == 'X' && checker(r,c,array) == true) //keeps all true values showing cell(live)
     {
         array[r][c] = 'X';
     }
@@ -250,10 +253,12 @@ void changer(int r, int c, int array[][column])
     {
         array[r][c] = 'O';
     }
-    else if(array[r][c] == 'O' && check(r,c,array) == true){
+    else if(array[r][c] == 'O' && check(r,c,array) == true) //sets all true values to showing cell(live)
+    {
         array[r][c] == 'X';
     }
-    else if(array[r][c] == 'O' && check(r,c,array) == false){
+    else if(array[r][c] == 'O' && check(r,c,array) == false) //keeps all false values showing no cell(dead)
+    {
         array[r][c] == 'O';
     }
 }

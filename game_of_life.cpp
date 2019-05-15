@@ -3,15 +3,14 @@
 
 using namespace std;
 
-int full_checker(int r, int c, int orginial[row][column]); //creates function to check cell is if alive or dead (true or false)
-bool full_checker(int r, int c, int orginial[row][column]); //creates function to check cell is if alive or dead (true or false)
-void changer(int r, int c, int original[row][column]); //creates function to change grid values
 const int row = 20, column = 20; //size of grid
+int full_checker(int r, int c, int orginial[row][column]); //creates function to check cell is if alive or dead (true or false)
+void changer(int r, int c, int original[row][column]); //creates function to change grid values
 
 int main()
 {
     int x_coordinate, y_coordinate; //input for desired coordinates of cells
-    char response, reponse2, grid[row][column]; //creates grid, response1, and reponse2
+    char response, reponse2, grid[row][column], temp_grid[row][column]; //creates grid, response1, and reponse2
 
     for(int i = 0; i < row; ++i)
     {
@@ -25,7 +24,7 @@ int main()
     {
         for(int j = 0; j < column; ++j)
         {
-            cout << setw(4) << grid[i][j]; //outputs grid
+            cout << setw(4) << grid[i][j]; //outputs the grid
         }
     }
 
@@ -233,13 +232,17 @@ int full_checker(int r, int c, int original[][column]){
     }
 }
 
-void changer(int r, int c, char array[][column], char temp_array[][column])
+void changer(int r, int c, char grid[][column], char temp_array[][column])
 {
+<<<<<<< HEAD
     if(array[r][c] == 'O' && ( checker(r,c,array) == 3 || checker(r,c,array) == 2 ) //sets all true values to cell(live)
+=======
+    if(grid[r][c] == 'O' && ( checker(r,c,grid) == 3 || checker(r,c,grid) == 2 )
+>>>>>>> 53157a0c444403397571b1ad021d066f6ae7cb0c
     {
         temp_array[r][c] = 'X';
     }
-    else if(array[r][c] == 'X' && (checker(r,c,array) == 4 || checker(r,c,array) == 1) ) //sets all false values to showing no cell(dead)
+    else if(grid[r][c] == 'X' && (checker(r,c,grid) == 4 || checker(r,c,grid) == 1) ) //sets all false values to showing no cell(dead)
     {
         temp_array[r][c] = 'O';
     }

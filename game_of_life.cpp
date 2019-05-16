@@ -78,156 +78,210 @@ int main()
     return 0;
 }
 
-int full_checker(int r, int c, int original[][column]){
+int full_checker(int r, int c, int original[][column])
+{
     int counter;
-    if(r == 0 && c == 0){
-        if(original[r][c + 1] == 'X'){
+    if(r == 0 && c == 0)
+    {
+        if(original[r][c + 1] == 'X')
+        {
             ++counter;
         }
-        if(original[r + 1][c] == 'X'){
+        if(original[r + 1][c] == 'X')
+        {
             ++counter;
         }
-        if(original[r + 1][c + 1] == 'X'){
-            ++counter;
-        }
-    }
-    else if(r == 19 && c == 0){
-        if(original[r - 1][c] == 'X'){
-            ++counter;
-        }
-        if(original[r - 1][c + 1] == 'X'){
-            ++counter;
-        }
-        if(original[r][c + 1] == 'X'){
+        if(original[r + 1][c + 1] == 'X')
+        {
             ++counter;
         }
     }
-    else if(r == 19 && c == 19){
-        if(original[r][c - 1] == 'X'){
+    else if(r == 19 && c == 0)
+    {
+        if(original[r - 1][c] == 'X')
+        {
             ++counter;
         }
-        if(original[r - 1][c - 1] == 'X'){
+        if(original[r - 1][c + 1] == 'X')
+        {
             ++counter;
         }
-        if(original[r - 1][c] == 'X'){
-            ++counter;
-        }
-    }
-    else if(r == 0 && c == 19){
-        if(original[r][c - 1] == 'X'){
-            ++counter;
-        }
-        if(original[r + 1][c - 1] == 'X'){
-            ++counter;
-        }
-        if(original[r + 1][c] == 'X'){
+        if(original[r][c + 1] == 'X')
+        {
             ++counter;
         }
     }
-    else if(r == 0){
-        if(original[r + 1][c] == 'X'){
+    else if(r == 19 && c == 19)
+    {
+        if(original[r][c - 1] == 'X')
+        {
             ++counter;
         }
-        if(original[r + 1][c - 1] == 'X'){
+        if(original[r - 1][c - 1] == 'X')
+        {
             ++counter;
         }
-        if(original[r + 1][c + 1] == 'X'){
-            ++counter;
-        }
-        if(original[r][c + 1] == 'X'){
-            ++counter;
-        }
-        if(original[r][c - 1] == 'X'){
-            ++counter;
-        }
-    }
-    else if(r == 19){
-        if(original[r - 1][c] == 'X'){
-            ++counter;
-        }
-        if(original[r - 1][c + 1] == 'X'){
-            ++counter;
-        }
-        if(original[r - 1][c - 1] == 'X'){
-            ++counter;
-        }
-        if(original[r][c + 1] == 'X'){
-            ++counter;
-        }
-        if(original[r][c - 1] == 'X'){
+        if(original[r - 1][c] == 'X')
+        {
             ++counter;
         }
     }
-    else if(c == 0){
-        if(original[r][c + 1] == 'X'){
+    else if(r == 0 && c == 19)
+    {
+        if(original[r][c - 1] == 'X')
+        {
             ++counter;
         }
-        if(original[r - 1][c + 1] == 'X'){
+        if(original[r + 1][c - 1] == 'X')
+        {
             ++counter;
         }
-        if(original[r + 1][c + 1] == 'X'){
-            ++counter;
-        }
-        if(original[r - 1][c] == 'X'){
-            ++counter;
-        }
-        if(original[r + 1][c] == 'X'){
-            ++counter;
-        }
-    }
-    else if(c == 19){
-        if(original[r][c - 1] == 'X'){
-            ++counter;
-        }
-        if(original[r - 1][c - 1] == 'X'){
-            ++counter;
-        }
-        if(original[r + 1][c - 1] == 'X'){
-            ++counter;
-        }
-        if(original[r - 1][c] == 'X'){
-            ++counter;
-        }
-        if(original[r + 1][c] == 'X'){
+        if(original[r + 1][c] == 'X')
+        {
             ++counter;
         }
     }
-    else{    
-        if(original[r - 1][c - 1] == 'X'){
+    else if(r == 0)
+    {
+        if(original[r + 1][c] == 'X')
+        {
             ++counter;
         }
-        if(original[r - 1][c] == 'X'){
+        if(original[r + 1][c - 1] == 'X')
+        {
             ++counter;
         }
-        if(original[r - 1][c + 1] == 'X'){
+        if(original[r + 1][c + 1] == 'X')
+        {
             ++counter;
         }
-        if(original[r][c - 1] == 'X'){
+        if(original[r][c + 1] == 'X')
+        {
             ++counter;
         }
-        if(original[r][c + 1] == 'X'){
+        if(original[r][c - 1] == 'X')
+        {
             ++counter;
         }
-        if(original[r + 1][c - 1] == 'X'){
+    }
+    else if(r == 19)
+    {
+        if(original[r - 1][c] == 'X')
+        {
             ++counter;
         }
-        if(original[r + 1][c] == 'X'){
+        if(original[r - 1][c + 1] == 'X')
+        {
             ++counter;
         }
-        if(original[r + 1][c + 1] == 'X'){
+        if(original[r - 1][c - 1] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r][c + 1] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r][c - 1] == 'X')
+        {
+            ++counter;
+        }
+    }
+    else if(c == 0)
+    {
+        if(original[r][c + 1] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r - 1][c + 1] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r + 1][c + 1] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r - 1][c] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r + 1][c] == 'X')
+        {
+            ++counter;
+        }
+    }
+    else if(c == 19)
+    {
+        if(original[r][c - 1] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r - 1][c - 1] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r + 1][c - 1] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r - 1][c] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r + 1][c] == 'X')
+        {
+            ++counter;
+        }
+    }
+    else
+    {    
+        if(original[r - 1][c - 1] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r - 1][c] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r - 1][c + 1] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r][c - 1] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r][c + 1] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r + 1][c - 1] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r + 1][c] == 'X')
+        {
+            ++counter;
+        }
+        if(original[r + 1][c + 1] == 'X')
+        {
             ++counter;
         }
 
-        if(counter  == 3){
+        if(counter  == 3)
+        {
             return 3;
         }
-        else if(counter == 2) {
+        else if(counter == 2)
+        {
             return 2;
         }
-        else if (counter > 3){
+        else if (counter > 3)
+        {
             return 4;
         }
-        else{
+        else
+        {
             return 1;
         }
     }
